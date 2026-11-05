@@ -35,7 +35,7 @@
     });
   });
 
-  // DesktopUniverse: a thumbnail shows that universe still
+  // Desktop Universe: a thumbnail shows that universe still
   const duVideo = document.getElementById('du-video'), duStill = document.getElementById('du-still');
   const thumbs = [...document.querySelectorAll('#du .thumbs button')];
   thumbs.forEach(b => b.addEventListener('click', () => {

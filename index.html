@@ -7,7 +7,7 @@
 <meta name="description" content="Zerui (Alex) Wang, Computer Science at the University of Waterloo. Backend systems, AI agents, and worlds you can walk through.">
 <meta property="og:title" content="Alex Wang">
 <meta property="og:description" content="Backend systems that stay correct when things break, agents that argue before they decide, and worlds you can walk through.">
-<meta property="og:image" content="https://alexw6385.github.io/media/moc-parthenon.jpg">
+<meta property="og:image" content="https://alexw6385.github.io/media/moc-planet.jpg">
 <meta name="theme-color" content="#edf0f3">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23172033'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23e3a21a'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23edf0f3' stroke-width='3' stroke-dasharray='6 6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -184,60 +184,80 @@
   <h2>Worlds</h2>
   <p class="intro">Things I make outside work: places you can walk through and games that read you. All of them run in the browser.</p>
 
-  <article class="world" id="moc">
-    <div class="viewer">
-      <img id="moc-img" src="media/moc-parthenon.jpg" alt="The Parthenon in Memory of Civilizations, rendered in the browser" width="1200" height="652" loading="lazy">
-      <div class="tabs" role="tablist" aria-label="Memory of Civilizations views">
-        <button role="tab" aria-selected="true" data-img="media/moc-parthenon.jpg" data-alt="The Parthenon in Memory of Civilizations, rendered in the browser">Athens</button>
-        <button role="tab" aria-selected="false" data-img="media/moc-edfu.jpg" data-alt="The pylon of the Temple of Horus at Edfu, true scale">Edfu</button>
-        <button role="tab" aria-selected="false" data-img="media/moc-map.jpg" data-alt="The map of the small planet with its civilizations">The map</button>
-      </div>
+  <article class="world-wide" id="moc">
+    <figure class="stage">
+      <img id="moc-big" src="media/moc-planet.jpg" alt="Flying over the small planet: Rome, Florence and Venice as settlements on Italy's coast, the horizon curving away" width="1400" height="760">
+      <figcaption id="moc-cap">The planet from the air: Italy, with Rome, Florence and Venice on it. Fly up and the ground curves away.</figcaption>
+    </figure>
+    <div class="strip" role="list" aria-label="Places in Memory of Civilizations">
+      <button role="listitem" class="on" data-big="media/moc-planet.jpg" data-cap="The planet from the air: Italy, with Rome, Florence and Venice on it. Fly up and the ground curves away."><img src="media/moc-planet-s.jpg" alt=""><span>The planet</span></button>
+      <button role="listitem" data-big="media/moc-taj.jpg" data-cap="Mughal Agra, 17th century: the Taj Mahal down the garden's water channel."><img src="media/moc-taj-s.jpg" alt=""><span>Agra</span></button>
+      <button role="listitem" data-big="media/moc-angkor.jpg" data-cap="Khmer Angkor, 12th century: Angkor Wat at the end of its causeway."><img src="media/moc-angkor-s.jpg" alt=""><span>Angkor</span></button>
+      <button role="listitem" data-big="media/moc-babylon.jpg" data-cap="Babylon, 6th century BC: the Processional Way's glazed lions lead to the Ishtar Gate."><img src="media/moc-babylon-s.jpg" alt=""><span>Babylon</span></button>
+      <button role="listitem" data-big="media/moc-istanbul.jpg" data-cap="Ottoman Istanbul, 16th century: the Süleymaniye's cascading domes and four minarets."><img src="media/moc-istanbul-s.jpg" alt=""><span>Istanbul</span></button>
+      <button role="listitem" data-big="media/moc-beijing.jpg" data-cap="Ming–Qing Beijing: the Hall of Supreme Harmony on its marble terrace."><img src="media/moc-beijing-s.jpg" alt=""><span>Beijing</span></button>
+      <button role="listitem" data-big="media/moc-petra.jpg" data-cap="Nabataean Petra: the Treasury at the end of the Siq."><img src="media/moc-petra-s.jpg" alt=""><span>Petra</span></button>
+      <button role="listitem" data-big="media/moc-moscow.jpg" data-cap="Muscovy, 16th century: St Basil's and the Kremlin wall across Red Square."><img src="media/moc-moscow-s.jpg" alt=""><span>Moscow</span></button>
+      <button role="listitem" data-big="media/moc-sydney.jpg" data-cap="Sydney, 1973: the Opera House across the cove, the Harbour Bridge behind."><img src="media/moc-sydney-s.jpg" alt=""><span>Sydney</span></button>
     </div>
-    <div class="caption">
+    <div class="caption wide">
       <h3>Memory of Civilizations</h3>
-      <p>A small planet with Earth's continents, where civilizations stand near where they stood: the Parthenon, Hagia Sophia, the Temple of Horus at Edfu and more, each built from a sourced dossier at true scale, with full interiors, baked indirect light and music synthesised in the browser.</p>
-      <p class="stack">three.js WebGPU · offline ray-traced irradiance · procedural materials</p>
+      <p>A small planet with Earth's continents where 57 civilizations stand near where they stood, each a place at a time: Babylon, Angkor, Edo Himeji, Mughal Agra, Muscovy, 1970s Sydney. Every landmark is built from a sourced dossier at true scale, with its interior and a townscape of its people round it, lit with ray-traced indirect light baked offline and given music synthesised in the browser. Travel from the globe and you arrive at each one's best view.</p>
+      <p class="stack">three.js WebGPU · procedural materials · offline irradiance baking · Web Audio</p>
       <p class="go"><a href="https://alexw6385.github.io/memory-of-civilizations/">Walk it</a> <a href="https://github.com/AlexW6385/memory-of-civilizations">Source</a></p>
     </div>
   </article>
 
-  <article class="world flip" id="symphony">
-    <div class="viewer">
-      <div class="xfade">
-        <img src="media/symphony-early.jpg" alt="The planet Rongqiu in its ocean age" width="1200" height="652" loading="lazy">
-        <img id="sym-late" src="media/symphony-late.jpg" alt="The same planet ages later, green continents" width="1200" height="652" loading="lazy">
+  <article class="world" id="symphony">
+    <div class="viewer dark">
+      <div class="xfade" id="sym-fade">
+        <img src="media/sym-ocean.jpg" alt="The planet Rongqiu in its ocean age: bare continents in a blue ocean" width="1400" height="760">
+        <img src="media/sym-snow.jpg" alt="The same planet in its snow age, ice spreading from the pole" width="1400" height="760">
+        <img src="media/sym-phoenix.jpg" alt="The same planet in the phoenix age, green continents and a golden desert" width="1400" height="760">
       </div>
-      <label class="slider"><span>Ocean age</span><input id="sym-range" type="range" min="0" max="100" value="0" aria-label="Move through the planet's ages"><span>Phoenix age</span></label>
+      <label class="slider"><span>Ocean age</span><input id="sym-range" type="range" min="0" max="200" value="0" aria-label="Move through the planet's ages"><span>Phoenix age</span></label>
     </div>
     <div class="caption">
       <h3>4.6 Billion Symphony</h3>
-      <p>A 3D exhibition of a Chinese novel I love: fly over its planets across their ages. Every glowing point is an entry with a summary, related entries and the chapters it appears in, plus a library and a reader for your own copy of the text.</p>
+      <p>A 3D exhibition of a Chinese novel I love. Drag through the planet's ages on its timeline; open any of its 1,091 entries and the camera flies down to the place while the entry opens with its summary, related entries and chapters.</p>
+      <figure class="inset"><img src="media/sym-entry.jpg" alt="An entry open: the camera has flown down to the Island of Echoes, its card on the left, the encyclopedia on the right" width="1400" height="760" loading="lazy"><figcaption>An entry: the Island of Echoes.</figcaption></figure>
       <p class="stack">three.js · Playwright tests across desktop and phone</p>
       <p class="go"><a href="https://alexw6385.github.io/4.6-billion-symphony/">Visit</a> <a href="https://github.com/AlexW6385/4.6-billion-symphony">Source</a></p>
     </div>
   </article>
 
-  <article class="world" id="predictable">
-    <div class="viewer">
-      <video src="media/predictable.mp4" poster="media/predictable.jpg" muted loop playsinline preload="none" aria-label="Predictable gameplay: the door runs away until you stop chasing it" width="720" height="414"></video>
+  <article class="world flip" id="predictable">
+    <div class="viewer live" data-src="https://alexw6385.github.io/predictable/">
+      <video src="media/predictable.mp4" poster="media/predictable.jpg" muted loop playsinline preload="none" aria-label="Predictable: on three levels, the obvious route dies, then the route that reads the trap clears" width="720" height="414"></video>
+      <button class="play-here" type="button">Play it here</button>
     </div>
     <div class="caption">
       <h3>Predictable</h3>
-      <p>A wordless troll platformer in 100 levels. It learns how you play (your speed, your retries, where you died) and sets its traps for that player. Every level ships with scripted tests: the naive route dies, the clever route dies to the next layer, and a real route clears.</p>
-      <p class="stack">vanilla JS · canvas · beam-search solver in the test suite</p>
-      <p class="go"><a href="https://alexw6385.github.io/predictable/">Play it</a> <a href="https://github.com/AlexW6385/predictable">Source</a></p>
+      <p>A wordless troll platformer in 100 levels. It learns how you play (your speed, your retries, where you died) and sets its traps for that player. The clip is the test suite playing: on each level the obvious route dies, then the route that reads the trap clears. Every level ships with those tests and a beam-search solver.</p>
+      <p class="stack">vanilla JS · canvas · scripted tests and a solver for every level</p>
+      <p class="go"><a href="https://alexw6385.github.io/predictable/">Open full screen</a> <a href="https://github.com/AlexW6385/predictable">Source</a></p>
     </div>
   </article>
 
-  <article class="world flip" id="du">
-    <div class="viewer dark">
-      <video src="media/desktop-universe.mp4" poster="media/desktop-universe.jpg" muted loop playsinline preload="none" aria-label="DesktopUniverse: tens of thousands of particles orbiting the cursor" width="800" height="450"></video>
+  <article class="world" id="du">
+    <div class="viewer dark live" data-src="https://alexw6385.github.io/desktop-universe/">
+      <video id="du-video" src="media/desktop-universe.mp4" poster="media/desktop-universe.jpg" muted loop playsinline preload="none" aria-label="DesktopUniverse: tens of thousands of particles following the cursor" width="800" height="450"></video>
+      <img id="du-still" src="media/du-galaxy.jpg" alt="" hidden width="720" height="450">
+      <button class="play-here" type="button">Play with it here</button>
     </div>
     <div class="caption">
       <h3>DesktopUniverse</h3>
-      <p>A live macOS wallpaper of tens of thousands of particles: galaxies, a black hole, murmurations, marbled ink. Each universe is a few hundred bytes of parameters over one engine, a stack of layers where each layer is pulled only by the one above it.</p>
+      <p>A live macOS wallpaper of tens of thousands of particles. Each universe is a few hundred bytes of parameters over one engine: a stack of layers, each pulled only by the one above it, with the cursor at the top.</p>
+      <div class="thumbs" role="list" aria-label="Some of the universes">
+        <button role="listitem" data-still="media/du-galaxy.jpg"><img src="media/du-galaxy.jpg" alt="Binary galaxy"></button>
+        <button role="listitem" data-still="media/du-black_hole.jpg"><img src="media/du-black_hole.jpg" alt="Black hole"></button>
+        <button role="listitem" data-still="media/du-saturn.jpg"><img src="media/du-saturn.jpg" alt="Saturn's rings"></button>
+        <button role="listitem" data-still="media/du-butterfly.jpg"><img src="media/du-butterfly.jpg" alt="Butterfly effect"></button>
+        <button role="listitem" data-still="media/du-field_lines.jpg"><img src="media/du-field_lines.jpg" alt="Field lines"></button>
+        <button role="listitem" data-still="media/du-ink.jpg"><img src="media/du-ink.jpg" alt="Marbled ink"></button>
+      </div>
       <p class="stack">Python · pygame · a WebGL port for the browser</p>
-      <p class="go"><a href="https://alexw6385.github.io/desktop-universe/">Play with it</a> <a href="https://github.com/AlexW6385/desktop-universe">Source</a></p>
+      <p class="go"><a href="https://alexw6385.github.io/desktop-universe/">Open full screen</a> <a href="https://github.com/AlexW6385/desktop-universe">Source</a></p>
     </div>
   </article>
 </section>

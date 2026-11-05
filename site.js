@@ -1,14 +1,18 @@
-/* Page behaviours: the Memory of Civilizations gallery, live embeds, and videos that play only while visible. */
+/* Page behaviours: the picture galleries, live embeds, and videos that play only while visible. */
 (() => {
-  // gallery: a tile shows its picture on the stage
-  const big = document.getElementById('moc-big'), cap = document.getElementById('moc-cap');
-  const tiles = [...document.querySelectorAll('#moc .strip button')];
-  tiles.forEach(t => t.addEventListener('click', () => {
-    tiles.forEach(o => o.classList.toggle('on', o === t));
-    big.src = t.dataset.big; big.alt = t.dataset.cap; cap.textContent = t.dataset.cap;
-  }));
-  // warm the gallery's large pictures once the page is idle
-  const warm = () => tiles.forEach(t => { const i = new Image(); i.src = t.dataset.big; });
+  // galleries: a tile shows its picture on its stage (Memory of Civilizations, the novel exhibition)
+  const allTiles = [];
+  document.querySelectorAll('[data-gallery]').forEach(g => {
+    const big = g.querySelector('.stage img'), cap = g.querySelector('.stage figcaption');
+    const tiles = [...g.querySelectorAll('.strip button')];
+    tiles.forEach(t => t.addEventListener('click', () => {
+      tiles.forEach(o => o.classList.toggle('on', o === t));
+      big.src = t.dataset.big; big.alt = t.dataset.cap; cap.textContent = t.dataset.cap;
+    }));
+    allTiles.push(...tiles);
+  });
+  // warm the galleries' large pictures once the page is idle
+  const warm = () => allTiles.forEach(t => { const i = new Image(); i.src = t.dataset.big; });
   if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 4000 }); else setTimeout(warm, 2500);
 
   // live embeds: the clip until asked, then the real thing

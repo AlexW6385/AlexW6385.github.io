@@ -3,16 +3,19 @@
   // galleries: a tile shows its picture on its stage (Memory of Civilizations, the novel exhibition)
   const allTiles = [];
   document.querySelectorAll('[data-gallery]').forEach(g => {
-    const big = g.querySelector('.stage img'), cap = g.querySelector('.stage figcaption');
-    const tiles = [...g.querySelectorAll('.strip button')];
+    const big = g.querySelector('.stage img'), cap = g.querySelector('.stage figcaption'), film = g.querySelector('.stage video');
+    const tiles = [...g.querySelectorAll('.strip button')].filter(t => t.dataset.big || 'film' in t.dataset);
     tiles.forEach(t => t.addEventListener('click', () => {
       tiles.forEach(o => o.classList.toggle('on', o === t));
-      big.src = t.dataset.big; big.alt = t.dataset.cap; cap.textContent = t.dataset.cap;
+      cap.textContent = t.dataset.cap;
+      if ('film' in t.dataset) { big.hidden = true; film.hidden = false; film.play().catch(() => {}); return; }
+      if (film) { film.pause(); film.hidden = true; }
+      big.hidden = false; big.src = t.dataset.big; big.alt = t.dataset.cap;
     }));
     allTiles.push(...tiles);
   });
   // warm the galleries' large pictures once the page is idle
-  const warm = () => allTiles.forEach(t => { const i = new Image(); i.src = t.dataset.big; });
+  const warm = () => allTiles.forEach(t => { if (t.dataset.big) { const i = new Image(); i.src = t.dataset.big; } });
   if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 4000 }); else setTimeout(warm, 2500);
 
   // live embeds: the clip until asked, then the real thing

@@ -41,7 +41,7 @@ a:hover { color: #000; text-decoration-thickness: 2px; }
   display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;
 }
 .mark { font-weight: 700; text-decoration: none; }
-.top nav { display: flex; gap: 22px; }
+.top nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 .top nav a { text-decoration: none; color: var(--muted); }
 .top nav a:hover { color: var(--ink); }
 
@@ -230,7 +230,7 @@ h3 { font-size: 26px; line-height: 1.2; font-weight: 600; margin: 0 0 10px; lett
   section { padding-top: 48px; }
   .timeline li { grid-template-columns: 1fr; gap: 4px; }
   .arch { grid-template-columns: 1fr; }
-  .top nav { gap: 14px; }
+  .top nav { gap: 4px 14px; }
   .sim { padding: 12px; }
 }
 .viewer [hidden] { display: none !important; }

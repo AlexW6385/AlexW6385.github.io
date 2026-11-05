@@ -1,4 +1,4 @@
-/* Page behaviours: the Memory of Civilizations gallery, the ages slider, live embeds, and videos that play only while visible. */
+/* Page behaviours: the Memory of Civilizations gallery, live embeds, and videos that play only while visible. */
 (() => {
   // gallery: a tile shows its picture on the stage
   const big = document.getElementById('moc-big'), cap = document.getElementById('moc-cap');
@@ -10,18 +10,6 @@
   // warm the gallery's large pictures once the page is idle
   const warm = () => tiles.forEach(t => { const i = new Image(); i.src = t.dataset.big; });
   if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 4000 }); else setTimeout(warm, 2500);
-
-  // ages: three pictures crossfaded along the slider
-  const range = document.getElementById('sym-range');
-  const layers = [...document.querySelectorAll('#sym-fade img')];
-  if (range && layers.length === 3) {
-    const paint = () => {
-      const v = range.value / 100;                  // 0 … 2
-      layers[1].style.opacity = Math.min(1, v);
-      layers[2].style.opacity = Math.max(0, v - 1);
-    };
-    range.addEventListener('input', paint); paint();
-  }
 
   // live embeds: the clip until asked, then the real thing
   document.querySelectorAll('.viewer.live').forEach(v => {

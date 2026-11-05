@@ -175,9 +175,6 @@ h3 { font-size: 26px; line-height: 1.2; font-weight: 600; margin: 0 0 10px; lett
   background: rgba(255, 255, 255, .85); color: var(--ink);
 }
 .tabs button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
-.xfade { position: relative; }
-.slider { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #05070d; color: #c9d2e0; font-size: 13px; }
-.slider input { flex: 1; accent-color: var(--signal); }
 .caption p { margin: 0 0 10px; max-width: 52ch; }
 .go { display: flex; gap: 18px; margin-top: 14px !important; }
 .go a { font-weight: 600; }
@@ -197,12 +194,11 @@ h3 { font-size: 26px; line-height: 1.2; font-weight: 600; margin: 0 0 10px; lett
 .strip button:hover img { filter: brightness(1.12); }
 .caption.wide p { max-width: 72ch; }
 .stage.film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
-.world.sub { margin: 18px 0 0; align-items: start; }
+.world.sub { margin: 18px 0 0; align-items: start; grid-template-columns: 1fr 1fr; }
+.world.sub .inset { margin: 4px 0 0; }
 .inset { margin: 6px 0 14px; }
 .inset img { display: block; width: 100%; height: auto; border: 1px solid var(--ink); border-radius: 6px; }
 .inset figcaption { font-size: 13px; color: var(--muted); margin-top: 4px; }
-.xfade img { transition: opacity .15s linear; }
-.xfade img + img { position: absolute; inset: 0; opacity: 0; }
 .viewer.live { aspect-ratio: auto; }
 .viewer iframe { display: block; width: 100%; aspect-ratio: 16 / 9.2; border: 0; background: #000; }
 .play-here { position: absolute; right: 12px; bottom: 12px; font: 600 14px var(--sans); padding: 9px 16px; border-radius: 999px;
@@ -224,7 +220,7 @@ h3 { font-size: 26px; line-height: 1.2; font-weight: 600; margin: 0 0 10px; lett
 @media (max-width: 920px) {
   .sim-body, .mind { grid-template-columns: 1fr; }
   .arch { grid-template-columns: 1fr 1fr; }
-  .world, .world.flip { grid-template-columns: 1fr; gap: 16px; }
+  .world, .world.flip, .world.sub { grid-template-columns: 1fr; gap: 16px; }
   .world.flip .viewer { order: 0; }
 }
 @media (max-width: 600px) {

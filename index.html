@@ -7,7 +7,7 @@
 <meta name="description" content="Zerui (Alex) Wang, Computer Science at the University of Waterloo. Backend systems, AI agents, and worlds you can walk through.">
 <meta property="og:title" content="Alex Wang">
 <meta property="og:description" content="Backend systems that stay correct when things break, agents that argue before they decide, and worlds you can walk through.">
-<meta property="og:image" content="https://alexw6385.github.io/media/moc-planet.jpg">
+<meta property="og:image" content="https://alexw6385.github.io/media/moc-suzhou.jpg">
 <meta name="theme-color" content="#edf0f3">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23172033'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23e3a21a'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23edf0f3' stroke-width='3' stroke-dasharray='6 6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -187,17 +187,18 @@
   <p class="intro">Places you can walk through, built outside work. Both run in the browser.</p>
 
   <article class="world-wide" id="moc" data-gallery>
-    <figure class="stage">
-      <img id="moc-big" src="media/moc-suzhou.jpg" alt="Ming Suzhou: a garden hall across a lotus pond, Taihu rocks in the foreground" width="1400" height="760">
-      <figcaption id="moc-cap">Ming Suzhou, 16th century: a garden hall across its lotus pond, seen from among the Taihu rocks.</figcaption>
+    <figure class="stage film">
+      <video src="media/moc-film.mp4" poster="media/moc-film.jpg" muted loop playsinline preload="none" aria-label="Memory of Civilizations: fourteen settlements in turn, among them Ming Suzhou across its lotus pond, the Potala over Lhasa, the Taj Mahal down its water channel, Angkor Wat, Machu Picchu, the Great Pyramid, Petra, Florence and New York, ending along the axis of the Forbidden City" width="1280" height="720"></video>
+      <img id="moc-big" src="media/moc-beijing.jpg" alt="" hidden width="1400" height="760">
+      <figcaption id="moc-cap">The film: fourteen settlements in 45 seconds, from Ming Suzhou to the Forbidden City.</figcaption>
     </figure>
     <div class="strip" role="list" aria-label="Places in Memory of Civilizations">
-      <button role="listitem" class="on" data-big="media/moc-suzhou.jpg" data-cap="Ming Suzhou, 16th century: a garden hall across its lotus pond, seen from among the Taihu rocks."><img src="media/moc-suzhou-s.jpg" alt=""><span>Suzhou</span></button>
-      <button role="listitem" data-big="media/moc-planet.jpg" data-cap="The planet from the air: Italy, with Rome, Florence and Venice on it. Fly up and the ground curves away."><img src="media/moc-planet-s.jpg" alt=""><span>The planet</span></button>
+      <button role="listitem" class="on" data-film data-cap="The film: fourteen settlements in 45 seconds, from Ming Suzhou to the Forbidden City."><img src="media/moc-film-s.jpg" alt=""><span>Film</span></button>
       <button role="listitem" data-big="media/moc-beijing.jpg" data-cap="Ming–Qing Beijing: the Forbidden City along its axis, the Hall of Supreme Harmony on its marble terrace."><img src="media/moc-beijing-s.jpg" alt=""><span>Beijing</span></button>
       <button role="listitem" data-big="media/moc-lhasa.jpg" data-cap="Lhasa, 17th century: the Potala over the white houses and prayer flags of the town."><img src="media/moc-lhasa-s.jpg" alt=""><span>Lhasa</span></button>
       <button role="listitem" data-big="media/moc-taj.jpg" data-cap="Mughal Agra, 17th century: the Taj Mahal down the garden's water channel."><img src="media/moc-taj-s.jpg" alt=""><span>Agra</span></button>
       <button role="listitem" data-big="media/moc-angkor.jpg" data-cap="Khmer Angkor, 12th century: people on the causeway of Angkor Wat."><img src="media/moc-angkor-s.jpg" alt=""><span>Angkor</span></button>
+      <button role="listitem" data-big="media/moc-suzhou.jpg" data-cap="Ming Suzhou, 16th century: a garden hall across its lotus pond, seen from among the Taihu rocks."><img src="media/moc-suzhou-s.jpg" alt=""><span>Suzhou</span></button>
       <button role="listitem" data-big="media/moc-petra.jpg" data-cap="Nabataean Petra, 1st century: the Treasury cut in the banded sandstone."><img src="media/moc-petra-s.jpg" alt=""><span>Petra</span></button>
       <button role="listitem" data-big="media/moc-florence.jpg" data-cap="Renaissance Florence, 15th century: Brunelleschi's dome and Giotto's campanile over the roofs."><img src="media/moc-florence-s.jpg" alt=""><span>Florence</span></button>
       <button role="listitem" data-big="media/moc-newyork.jpg" data-cap="New York, 20th century: the Chrysler Building at the end of the street."><img src="media/moc-newyork-s.jpg" alt=""><span>New York</span></button>
@@ -206,7 +207,7 @@
       <h3>Memory of Civilizations</h3>
       <p>A small planet with Earth's continents on which 94 settlements stand near where they stood, each a place at one moment: Babylon, Angkor, Ming Suzhou, Mughal Agra, Petra, 20th-century New York. Every one is a walkable town built from a sourced dossier: a landmark at true scale with its interior, and round it the streets, houses, markets and people of its time, with houses you can walk into. One sun lights the whole planet, weather and seasons change by region, indirect light is ray traced offline, and each place has music synthesised in the browser. Travel by the globe, take a random city, or let the tour carry you from one to the next.</p>
       <p class="stack">three.js WebGPU · procedural materials · offline irradiance baking · Web Audio</p>
-      <p class="go"><a href="https://alexw6385.github.io/memory-of-civilizations/">Walk it</a> <a href="media/moc-film.mp4">Film (45 s)</a> <a href="https://github.com/AlexW6385/memory-of-civilizations">Source</a></p>
+      <p class="go"><a href="https://alexw6385.github.io/memory-of-civilizations/">Walk it</a> <a href="media/moc-film.mp4">Film with sound</a> <a href="https://github.com/AlexW6385/memory-of-civilizations">Source</a></p>
     </div>
   </article>
 
